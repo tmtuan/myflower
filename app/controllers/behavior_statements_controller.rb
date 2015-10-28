@@ -6,4 +6,14 @@ class BehaviorStatementsController < ApplicationController
 
   end
 
+  def score
+
+    @statements = params[:behavior_statements]
+
+
+    if @statements != nil
+      @totalscore = 0
+
+    end
+  end
 end

@@ -1,4 +1,30 @@
-<h1>this is behavior_statements#index</h1>
-<% $statements.each do |s| %>
-    <p><%= s %></p>
-<% end %>
+<div class="container">
+    <h1>Know who you are to enhance the best of you</h1>
+
+    <%= form_for :behavior_statements, url: score_path,  html: { class: "form-group"} do |f| %>
+        <div class="table">
+            <table class="table table-hover">
+            <th>Behavior Statements</th>
+            <th>Score</th>
+            <th>Emotional Scale</th>
+
+            <% @n = 0 %>
+            <% $statements.each do |s| %>
+                <tr>
+                  <td><%= s %></td>
+                  <td><%= f.text_field @n, :placeholder => "1..5", :class => "form-control" %></td>
+                  <td>
+                      <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                        </div>
+                      </div>
+                  </td>
+                </tr>
+                <% @n = @n + 1 %>
+            <% end %>
+            </table>
+        </div>
+
+        <%= f.submit "Send", :class => "btn btn-lg btn-block btn-primary" %>
+    <% end %>
+</div>
