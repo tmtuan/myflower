@@ -9,9 +9,9 @@
             <th>Emotional Scale</th>
 
             <% @n = 0 %>
-            <% $statements.each do |s| %>
+            <% @statements.each do |s| %>
                 <tr>
-                  <td><%= s %></td>
+                  <td><%= s.content %></td>
                   <td>
                     <label class="radio-inline">
                       <input type="radio" name="behavior_statements[<%= @n %>]" id="inlineRadio1" value="1"> Very Inaccurate
