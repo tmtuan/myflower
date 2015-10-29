@@ -68,7 +68,7 @@ class StatementsController < ApplicationController
     @statement = Statement.new(statement_params)
 
     @statement.save
-    redirect_to @statement
+    redirect_to list_path
   end
 
   def show
