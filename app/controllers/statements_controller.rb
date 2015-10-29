@@ -1,4 +1,4 @@
-class BehaviorStatementsController < ApplicationController
+class StatementsController < ApplicationController
 
   $statements = ["Am the life of the party",
                  "Feel little concern for others.",
@@ -56,9 +56,24 @@ class BehaviorStatementsController < ApplicationController
 
   end
 
+  def new
+
+  end
+
+  def create
+    @statement = Statement.new(statement_params)
+
+    @statement.save
+    redirect_to @statement
+  end
+
+  def show
+    @statement = Statement.find(params[:id])
+  end
+
   def score
 
-    @statements = params[:behavior_statements]
+    @statements = params[:statements]
 
 
 
@@ -67,4 +82,15 @@ class BehaviorStatementsController < ApplicationController
 
     end
   end
+
+  def list
+    @statements = Statement.all
+  end
+
+
+  private
+  def statement_params
+    params.require(:statement).permit(:content, :direction)
+  end
+
 end

@@ -1,0 +1,16 @@
+<div class="container">
+    <h1>Add new statements</h1>
+    <%= form_for :statement, url: statements_path, html: { :class => "form-group" } do |f| %>
+        <div class="form-group">
+            <%= f.label :content %>
+            <%= f.text_field :content, :class => "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :direction %>
+          <%= f.text_field :direction, :placeholder => "true/false", :class => "form-control" %>
+        </div>
+
+        <%= f.submit "Save", :class => "btn btn-primary btn-lg" %>
+
+    <% end %>
+</div>
