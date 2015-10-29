@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>Factors</h1>
+  <p>
+    <%= @factor.name %>
+  </p>
+  <p>
+    <%= @factor.description %>
+  </p>
+  <%= link_to 'Edit', edit_factor_path %>
+  <%= link_to 'Delete', factor_path(@factor), method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>

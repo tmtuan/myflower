@@ -10,6 +10,11 @@
         <%= f.select :direction, options_for_select(["true", "false"] || "true"), {} , :class => "form-control" %>
       </div>
 
+      <div class="form-group">
+        <%= f.label :factor %>
+        <%= f.select :factor_id, options_for_select(Factor.all.map{|s| [s.name, s.id]}, @statement.factor_id), {} , :class => "form-control" %>
+      </div>
+
       <%= f.submit "Save", :class => "btn btn-primary btn-lg" %>
 
   <% end %>

@@ -105,7 +105,7 @@ class StatementsController < ApplicationController
 
   private
   def statement_params
-    params.require(:statement).permit(:content, :direction)
+    params.require(:statement).permit(:content, :direction, :factor_id)
   end
 
   def find_statement
