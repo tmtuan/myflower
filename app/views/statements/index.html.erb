@@ -2,7 +2,7 @@
     <div class="col-md-9 col-md-offset-1">
     <h1>Know who you are to enhance the best of you</h1>
 
-    <%= form_for :behavior_statements, url: score_path,  html: { class: "form-group"} do |f| %>
+    <%= form_for :statements, url: score_path,  html: { class: "form-group"} do |f| %>
         <div class="table">
             <table class="table table-hover">
             <th>Behavior Statements</th>
@@ -14,19 +14,19 @@
                   <td><%= s.content %></td>
                   <td>
                     <label class="radio-inline">
-                      <input type="radio" name="behavior_statements[<%= @n %>]" id="inlineRadio1" value="1"> Very Inaccurate
+                      <input type="radio" name="statements[<%= @n %>]" id="inlineRadio1" value="<%=s.direction ? 1 : -1 %>"> Very Inaccurate
                     </label>
                     <label class="radio-inline">
-                      <input type="radio" name="behavior_statements[<%= @n %>]" id="inlineRadio2" value="2"> Moderately Inaccurate
+                      <input type="radio" name="statements[<%= @n %>]" id="inlineRadio2" value="<%= s.direction ? 2 : -2 %>"> Moderately Inaccurate
                     </label>
                     <label class="radio-inline">
-                      <input type="radio" name="behavior_statements[<%= @n %>]" id="inlineRadio3" value="3"> Neither Accurate Nor Inaccurate
+                      <input type="radio" name="statements[<%= @n %>]" id="inlineRadio3" value="<%= s.direction ? 3 : -3 %>"> Neither Accurate Nor Inaccurate
                     </label>
                     <label class="radio-inline">
-                      <input type="radio" name="behavior_statements[<%= @n %>]" id="inlineRadio3" value="4"> Moderately Accurate
+                      <input type="radio" name="statements[<%= @n %>]" id="inlineRadio3" value="<%= s.direction ? 4 : -4 %>"> Moderately Accurate
                     </label>
                     <label class="radio-inline">
-                      <input type="radio" name="behavior_statements[<%= @n %>]" id="inlineRadio3" value="5"> Very Accurate
+                      <input type="radio" name="statements[<%= @n %>]" id="inlineRadio3" value="<%= s.direction ? 5 : -5 %>"> Very Accurate
                     </label>
                   </td>
                 </tr>

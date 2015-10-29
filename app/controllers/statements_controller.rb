@@ -91,13 +91,16 @@ class StatementsController < ApplicationController
     @statement.destroy
     redirect_to list_path
   end
+
   def score
 
     @statements = params[:statements]
 
+    @totalscore = 0
     if @statements != nil
-      @totalscore = 0
-
+      @statements.each do |key, value|
+        @totalscore = @totalscore + value.to_i
+      end
     end
   end
 
