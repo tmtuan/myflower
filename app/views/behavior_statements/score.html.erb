@@ -1,5 +1,8 @@
 <h1>This is the score page</h1>
-<h3>Total score: <%= @statements %></h3>
-
-
+<h3>Statements: <%= @statements %></h3>
+<% @totalscore = 0 %>
+<% @statements.each do |key, value| %>
+    <% @totalscore = @totalscore + value.to_i %>
+<% end %>
+<h4>Total Score: <%= @totalscore %></h4>
 
