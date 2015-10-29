@@ -11,13 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151029071151) do
+ActiveRecord::Schema.define(version: 20151029093836) do
+
+  create_table "factors", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "statements", force: :cascade do |t|
     t.text     "content"
     t.boolean  "direction"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "factor_id"
   end
+
+  add_index "statements", ["factor_id"], name: "index_statements_on_factor_id"
 
 end

@@ -1,6 +1,6 @@
 class StatementsController < ApplicationController
   before_action :find_statement, only: [:show, :edit, :update, :destroy]
-  $statements = ["Am the life of the party",
+  $statements_local = ["Am the life of the party",
                  "Feel little concern for others.",
                  "Am always prepared",
                  "Get stressed out easily",
@@ -53,7 +53,7 @@ class StatementsController < ApplicationController
                   ];
 
   def index
-
+    @statements = Statement.all
   end
 
   def list
@@ -81,7 +81,7 @@ class StatementsController < ApplicationController
 
   def update
     if @statement.update(statement_params)
-      redirect_to @statement, notice: "Statement was successfully updated"
+      redirect_to list_path, notice: "Statement was successfully updated"
     else
       render 'edit'
     end
