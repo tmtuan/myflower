@@ -1,7 +1,11 @@
-<h1>Statement</h1>
-<p>
-<%= @statement.content %>
-</p>
-<p>
-<%= @statement.direction %>
-</p>
+<div class="container">
+    <h1>Statement</h1>
+    <p>
+    <%= @statement.content %>
+    </p>
+    <p>
+    <%= @statement.direction %>
+    </p>
+    <%= link_to 'Edit', edit_statement_path %>
+    <%= link_to 'Delete', statement_path(@statement), method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>

@@ -1,6 +1,6 @@
 <div class="container">
     <h1>All statements</h1>
     <% @statements.each do |s| %>
-        <p><%= s.content %></p>
+        <p><%= link_to s.content, s %></p>
     <% end %>
 </div>
