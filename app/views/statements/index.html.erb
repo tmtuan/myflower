@@ -1,14 +1,24 @@
-<div class="container-fluid">
-    <div class="col-md-9 col-md-offset-1">
-    <h1>Know who you are to enhance the best of you</h1>
-
-      <div class="progress" id="tmt" >
-        <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" id="completion" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 0%" complete="0">
-          <span class="sr-only">40% Complete (success)</span>
-        </div>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><%= image_tag("logo.jpeg", class:"logo") %></a>
+    </div>
+    <div class="progress invisible" id="startprogress">
+      <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" id="completion" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 0%" complete="0">
+        <span id="numOfStatement">% Complete (success)</span>
       </div>
+    </div>
+  </div>
+</nav>
 
-    <%= form_for :statements, url: score_path,  html: { class: "form-group"} do |f| %>
+<div class="container">
+    <div class="jumbotron" >
+    <h2>Know who you are to enhance the best of you</h2>
+
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <%= form_for :statements, url: score_path,  html: { class: "form-group"} do |f| %>
 
             <table class="table table-hover">
             <th>Statements</th>
@@ -51,6 +61,7 @@
                 <% @n = @n + 1 %>
             <% end %>
             </table>
+           </div>
         </div>
 
         <%= f.submit "Send", :class => "btn btn-lg btn-block btn-primary" %>
@@ -61,21 +72,20 @@
 <script src="assets/js/ct-paper-radio.js"></script>
 
 <script>
-  $(document).ready(function() {
-      $('#tmt').on('click', function(){
-         $('.progress-bar').css('width', "80%");
-      });
-  });
 
   function input_onchange(n) {
       var element = "checked"+n;
       //('#checked').css.removeClass('invisible');
 
+      document.getElementById('startprogress').classList.remove('invisible');
       document.getElementById(element).classList.remove('invisible');
+
       if(document.getElementById(element).getAttribute('done') == 'no') {
+
           document.getElementById(element).setAttribute('done', 'yes');
           var complete = parseInt(document.getElementById('completion').getAttribute('complete'));
           complete++;
+          document.getElementById('numOfStatement').innerHTML = complete.toString() + "/ 50";
           $('.progress-bar').css('width', complete*2+"%");
           document.getElementById('completion').setAttribute('complete', complete.toString());
       }
