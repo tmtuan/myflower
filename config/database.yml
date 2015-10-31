@@ -29,8 +29,13 @@ development:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  <<: *default
-  database: postgresql
+      adapter: postgresql
+      encoding: utf8
+      database : dcod97sfq8c9qb
+      host: ec2-107-21-219-142.compute-1.amazonaws.com
+      port: 5433
+      username: anhfxkrrgabfot
+      password: 6SmG3N2h4E6suhZCLwwWFybHWV
 
 production:
   <<: *default
