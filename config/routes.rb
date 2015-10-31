@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post 'score' => 'statements#score'
   get 'list' => 'statements#list'
 
+  root 'statements#index'
   resources :statements
   resources :factors
 end

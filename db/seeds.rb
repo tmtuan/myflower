@@ -1,7 +1,59 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+Factor.create!([
+  {name: "Extraversion", description: ""},
+  {name: "Agreeableness", description: ""},
+  {name: "Conscientiousness", description: ""},
+  {name: "Emotional Stability", description: ""},
+  {name: "Intellect/Imagination", description: ""}
+])
+Statement.create!([
+  {content: "Am the life of the party.", direction: true, factor_id: nil},
+  {content: "Feel little concern for others.", direction: false, factor_id: nil},
+  {content: "Am always prepared.", direction: true, factor_id: nil},
+  {content: "Get stressed out easily.", direction: false, factor_id: nil},
+  {content: "Have a rich vocabulary.", direction: true, factor_id: nil},
+  {content: "Don't talk a lot.", direction: false, factor_id: nil},
+  {content: "Am interested in people.", direction: true, factor_id: nil},
+  {content: "Leave my belongings around.", direction: false, factor_id: nil},
+  {content: "Am relaxed most of the time.", direction: true, factor_id: nil},
+  {content: "Have difficulty understanding abstract ideas.", direction: false, factor_id: nil},
+  {content: "Feel comfortable around people.", direction: true, factor_id: nil},
+  {content: "Insult people.", direction: false, factor_id: nil},
+  {content: "Pay attention to details.", direction: true, factor_id: nil},
+  {content: "Worry about things.", direction: false, factor_id: nil},
+  {content: "Have a vivid imagination.", direction: true, factor_id: nil},
+  {content: "Keep in the background.", direction: false, factor_id: nil},
+  {content: "Sympathize with others' feelings.", direction: true, factor_id: nil},
+  {content: "Make a mess of things.", direction: false, factor_id: nil},
+  {content: "Seldom feel blue.", direction: true, factor_id: nil},
+  {content: "Am not interested in abstract ideas.", direction: false, factor_id: nil},
+  {content: "Start conversations.", direction: true, factor_id: nil},
+  {content: "Am not interested in other people's problems.", direction: false, factor_id: nil},
+  {content: "Get chores done right away. \t", direction: true, factor_id: nil},
+  {content: "Am easily disturbed.", direction: false, factor_id: nil},
+  {content: "Have excellent ideas.", direction: true, factor_id: nil},
+  {content: "Have little to say.", direction: false, factor_id: nil},
+  {content: "Have a soft heart.", direction: true, factor_id: nil},
+  {content: "Often forget to put things back in their proper place.", direction: false, factor_id: nil},
+  {content: "Get upset easily.", direction: false, factor_id: nil},
+  {content: "Do not have a good imagination.", direction: false, factor_id: nil},
+  {content: "Talk to a lot of different people at parties.", direction: true, factor_id: nil},
+  {content: "Am not really interested in others.", direction: false, factor_id: nil},
+  {content: "Like order.", direction: true, factor_id: nil},
+  {content: "Change my mood a lot.", direction: false, factor_id: nil},
+  {content: "Am quick to understand things.", direction: true, factor_id: nil},
+  {content: "Don't like to draw attention to myself.", direction: false, factor_id: nil},
+  {content: "Take time out for others.", direction: true, factor_id: nil},
+  {content: "Shirk my duties.", direction: false, factor_id: nil},
+  {content: "Have frequent mood swings.", direction: false, factor_id: nil},
+  {content: "Use difficult words.", direction: true, factor_id: nil},
+  {content: "Don't mind being the center of attention.", direction: true, factor_id: nil},
+  {content: "Feel others' emotions.", direction: true, factor_id: nil},
+  {content: "Follow a schedule.", direction: true, factor_id: nil},
+  {content: "Get irritated easily.", direction: false, factor_id: nil},
+  {content: "Spend time reflecting on things.", direction: true, factor_id: nil},
+  {content: "Am quiet around strangers. \t", direction: false, factor_id: nil},
+  {content: "Make people feel at ease.", direction: true, factor_id: nil},
+  {content: "Am exacting in my work.", direction: true, factor_id: nil},
+  {content: "Often feel blue.", direction: false, factor_id: nil},
+  {content: "Am full of ideas.", direction: true, factor_id: nil}
+])
