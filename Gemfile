@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -28,6 +28,8 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.5.1'
 gem 'bootstrap-slider-rails', '~> 5.2', '>= 5.2.4'
 
 gem 'seed_dump', '~> 3.2', '>= 3.2.2'
+
+gem 'pg'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

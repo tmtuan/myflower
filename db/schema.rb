@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20151029093836) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "factors", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
@@ -28,6 +31,7 @@ ActiveRecord::Schema.define(version: 20151029093836) do
     t.integer  "factor_id"
   end
 
-  add_index "statements", ["factor_id"], name: "index_statements_on_factor_id"
+  add_index "statements", ["factor_id"], name: "index_statements_on_factor_id", using: :btree
 
+  add_foreign_key "statements", "factors"
 end
