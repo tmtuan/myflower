@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   root 'statements#index'
   resources :statements
   resources :factors
+
+  get 'home' => 'pages#home'
 end
