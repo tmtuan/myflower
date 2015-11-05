@@ -14,8 +14,16 @@
 <div class="container">
     <div class="jumbotron" >
     <h2>Know who you are to enhance the best of you</h2>
-
     </div>
+
+  <nav>
+    <ul class="pagination">
+      <% for @i in 1..@statements.count do %>
+          <li id="nav_statement[<%= @i %>]"><a href="#statements[<%= @i %>]"><%= @i %></a></li>
+      <% end %>
+    </ul>
+  </nav>
+
     <div class="row">
       <div class="col-md-12">
         <%= form_for :statements, url: score_path,  html: { class: "form-group"} do |f| %>
@@ -24,10 +32,11 @@
             <th>Statements</th>
             <th colspan="6">Scale</th>
 
-            <% @n = 0 %>
+            <% @n = 1 %>
             <% @statements.each do |s| %>
                 <tr>
-                  <td><%= s.content %></td>
+                  <td><%= @n %></td>
+                  <td id="statements[<%= @n %>]"><%= s.content %></td>
                   <td>
                     <label class="radio radio-blue">
                       <input type="radio" name="statements[<%= @n %>]" data-toggle="radio" id="inlineRadio1" value="<%= s.direction ? 1 : -1 %>" onchange='input_onchange("<%= @n %>")' > Behavior Statements
@@ -84,6 +93,7 @@
 
   function input_onchange(n) {
       var element = "checked"+n;
+      var nav_statement = "nav_statement["+n+"]";
       //('#checked').css.removeClass('invisible');
 
       document.getElementById('startprogress').classList.remove('invisible');
@@ -97,6 +107,7 @@
           document.getElementById('numOfStatement').innerHTML = complete.toString() + "/ 50";
           $('.progress-bar').css('width', complete*2+"%");
           document.getElementById('completion').setAttribute('complete', complete.toString());
+          document.getElementById(nav_statement).classList.add('active');
       }
 
   }
